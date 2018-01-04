@@ -11,4 +11,6 @@ ReactDOM.render((
 
 //questions for Dan
 //how do I apply styled components CSS to an already complex component?
-//how do I add my own class name to a styled component?
+//how can I manage CSS variations and reuse/import CSS- so look at Btn and BtnLink?
+//why must a styled component be linked to an HTML tag necessarily?
+//what about generic CSS like site-wide font-family? base font-size?
