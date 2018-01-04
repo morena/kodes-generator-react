@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
-import { BrowserRouter, Route, Link, IndexRoute, browserHistory } from 'react-router'
+import React from 'react'
 import Header from './Header'
 import Main from './Main'
+import Container from './styled-components/Container'
 
 const App = () => (
   <div>
     <Header />
-    <Main />
+    <Container>
+        <Main />
+    </Container>
   </div>
 )
+
 
 export default App
