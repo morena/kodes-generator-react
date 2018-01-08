@@ -6,7 +6,7 @@ import Design from './Design'
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path='/' component={Home}/>
+      <Route exact path='/' component={Home} />
       <Route path='/design' component={Design}/>
     </Switch>
   </main>

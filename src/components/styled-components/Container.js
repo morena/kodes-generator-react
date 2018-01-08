@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -8,4 +9,4 @@ const Container = styled.div`
     width: 1170px;
 `;
 
-export default Container
+export default ({ className, ...props }) => <Container className={`container ${className}`} {...props}/>

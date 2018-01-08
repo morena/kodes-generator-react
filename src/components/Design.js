@@ -1,13 +1,14 @@
 import React from 'react'
 import Svg from './Svg'
 import ColoursList from './ColoursList'
+import fonts from '../fonts'
 
 import styled from 'styled-components'
 import Row from './styled-components/Row'
 import Btn from './styled-components/Btn'
 
 const SectionHeading = styled.h1`
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: ${fonts.Montserrat};
     text-transform: uppercase;
     font-weight: 700;
     font-size: 36px;
@@ -17,7 +18,7 @@ const SectionHeading = styled.h1`
 `;
 
 const SectionSubheading = styled.h2`
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: ${fonts.Montserrat};
     text-transform: uppercase;
     font-weight: 700;
     font-size: 30px;
@@ -57,7 +58,7 @@ const Design = () => (
                     </div>
                     <Row>
                       <div className="col-lg-12 text-center buttons">
-                        <Btn id="downloadThisNecklace" className="btn btn-lg">Download necklace as image</Btn>
+                        <Btn id="downloadThisNecklace" className="btn-lg">Download necklace as image</Btn>
                         <Btn id="orderThisNecklace" className="btn btn-lg">Order this necklace</Btn>
                         <Btn id="confirmOrder" className="btn btn-lg">Order custom necklace</Btn>
                       </div>

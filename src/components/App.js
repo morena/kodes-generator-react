@@ -9,14 +9,10 @@ const Background = styled.div`
 `;
 
 const App = () => (
-  <div>
-    <Background>
-        <Header />
-        <Container>
-            <Main />
-        </Container>
+    <Background className="background">
+        <Header className="header" />
+        <Main />
     </Background>
-  </div>
 )
 
 
