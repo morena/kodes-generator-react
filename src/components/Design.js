@@ -6,7 +6,6 @@ import Grid from 'styled-grid'
 
 import styled from 'styled-components'
 import Btn from './styled-components/Btn'
-import Row from './styled-components/Row'
 
 const SectionHeading = styled.h1`
     font-family: ${fonts.Montserrat};
@@ -35,40 +34,47 @@ const TextMuted = styled.p`
     line-height: 1.75;
 `;
 
+const Section = styled.section`
+    padding: 100px 0;
+    @media (min-width: 768px){
+        padding: 150px 0;
+    }
+`;
+
 const Design = () => (
     <div>
-        <section>
-            <Row>
-              <Grid lg={12/12} className="text-center">
+        <Section>
+            <div className="row">
+              <Grid lg={12/12} className="col12 text-center">
                 <SectionHeading>Kodes necklaces generator</SectionHeading>
                 <SectionSubheading>Customise your Kodes necklace</SectionSubheading>
                 <TextMuted>
                   <strong>Click on one or more beads then click on a colour. Move onto a new bead by clicking on it.</strong>
                 </TextMuted>
               </Grid>
-            </Row>
-            <Row id="svgWrapper">
+            </div>
+            <div id="svgWrapper">
               <form id="necklaceOrderForm" action="/insert-details" method="post" className="form-horizontal">
-                <Row>
-                  <Grid sm={6/12} id="test">
+                <div className="row">
+                  <Grid sm={6/12} md={6/12} lg={6/12} id="test" className="col6">
                     <Svg />
                   </Grid>
-                  <Grid sm={6/12}>
+                  <Grid sm={6/12} md={6/12} lg={6/12} className="col6">
                     <div id="colours">
                       <ColoursList />
                     </div>
-                    <Row>
-                      <Grid lg={12/12} className="text-center buttons">
+                    <div className="row">
+                      <Grid lg={12/12} className="col12 text-center buttons">
                         <Btn id="downloadThisNecklace" className="btn-lg">Download necklace as image</Btn>
                         <Btn id="orderThisNecklace" className="btn btn-lg">Order this necklace</Btn>
                         <Btn id="confirmOrder" className="btn btn-lg">Order custom necklace</Btn>
                       </Grid>
-                    </Row>
+                    </div>
                 </Grid>
-                </Row>
+                </div>
               </form>
-            </Row>
-        </section>
+            </div>
+        </Section>
     </div>
 )
 

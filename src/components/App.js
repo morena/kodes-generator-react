@@ -4,7 +4,7 @@ import Main from './Main'
 import styled from 'styled-components'
 
 const Background = styled.div`
-    background-color: #333;
+    //background-color: #333;
 `;
 
 const App = () => (
