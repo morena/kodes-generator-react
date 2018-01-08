@@ -2,10 +2,11 @@ import React from 'react'
 import Svg from './Svg'
 import ColoursList from './ColoursList'
 import fonts from '../fonts'
+import Grid from 'styled-grid'
 
 import styled from 'styled-components'
-import Row from './styled-components/Row'
 import Btn from './styled-components/Btn'
+import Row from './styled-components/Row'
 
 const SectionHeading = styled.h1`
     font-family: ${fonts.Montserrat};
@@ -38,32 +39,32 @@ const Design = () => (
     <div>
         <section>
             <Row>
-              <div className="col-lg-12 text-center">
+              <Grid lg={12/12} className="text-center">
                 <SectionHeading>Kodes necklaces generator</SectionHeading>
                 <SectionSubheading>Customise your Kodes necklace</SectionSubheading>
                 <TextMuted>
                   <strong>Click on one or more beads then click on a colour. Move onto a new bead by clicking on it.</strong>
                 </TextMuted>
-              </div>
+              </Grid>
             </Row>
             <Row id="svgWrapper">
               <form id="necklaceOrderForm" action="/insert-details" method="post" className="form-horizontal">
                 <Row>
-                  <div id="test" className="col-sm-6">
+                  <Grid sm={6/12} id="test">
                     <Svg />
-                  </div>
-                  <div className="col-sm-6">
+                  </Grid>
+                  <Grid sm={6/12}>
                     <div id="colours">
                       <ColoursList />
                     </div>
                     <Row>
-                      <div className="col-lg-12 text-center buttons">
+                      <Grid lg={12/12} className="text-center buttons">
                         <Btn id="downloadThisNecklace" className="btn-lg">Download necklace as image</Btn>
                         <Btn id="orderThisNecklace" className="btn btn-lg">Order this necklace</Btn>
                         <Btn id="confirmOrder" className="btn btn-lg">Order custom necklace</Btn>
-                      </div>
+                      </Grid>
                     </Row>
-                </div>
+                </Grid>
                 </Row>
               </form>
             </Row>

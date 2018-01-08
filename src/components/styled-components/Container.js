@@ -9,4 +9,4 @@ const Container = styled.div`
     width: 1170px;
 `;
 
-export default ({ className, ...props }) => <Container className={`container ${className}`} {...props}/>
+export default ({ className, ...props }) => <Container className={`col ${className? className:''}`} {...props}/>

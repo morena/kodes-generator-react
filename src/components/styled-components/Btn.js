@@ -7,4 +7,4 @@ const Btn = styled.button`
     ${ BtnStyles }
 `;
 
-export default ({ className, ...props }) => <Btn className={`btn ${className}`} {...props}/>
+export default ({ className, ...props }) => <Btn className={`col ${className? className:''}`} {...props}/>

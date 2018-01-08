@@ -39,7 +39,6 @@ class Home extends React.Component {
         return(
             <HomeBg className="home-background">
                 <Container>
-                    <h1>${this.props.location.pathname}</h1>
                     <IntroText className="intro-text">
                         <IntroLeadIn className="intro-lead-in">Welcome To Kodes Necklace Generator!</IntroLeadIn>
                     </IntroText>
