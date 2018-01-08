@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from './Header'
 import Main from './Main'
-import Container from './styled-components/Container'
 import styled from 'styled-components'
 
 const Background = styled.div`

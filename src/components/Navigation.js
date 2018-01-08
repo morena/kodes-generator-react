@@ -34,9 +34,9 @@ const NavBarNav = styled.div`
 `;
 
 const Navigation = () => (
-    <NavBar className="collapse navbar-collapse">
-        <NavBarNav className="nav navbar-nav navbar-right">
-            <li><Link className="page-scroll" to="/design">Create a Custom Necklace</Link></li>
+    <NavBar className="navbar">
+        <NavBarNav className="navbar-nav">
+            <li><Link to="/design">Create a Custom Necklace</Link></li>
         </NavBarNav>
     </NavBar>
 )

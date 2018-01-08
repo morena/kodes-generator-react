@@ -33,19 +33,6 @@ const IntroHeading = styled.div`
     line-height: 75px;
     margin-bottom: 50px;
 `;
-//
-// const Home = () => (
-//     <HomeBg className="home-background">
-//         <Container>
-//             <h1>${this.props.location.pathname}</h1>
-//             <IntroText className="intro-text">
-//                 <IntroLeadIn className="intro-lead-in">Welcome To Kodes Necklace Generator!</IntroLeadIn>
-//             </IntroText>
-//             <IntroHeading className="intro-heading">Order a custom necklace here</IntroHeading>
-//             <BtnLink href="/design">Order</BtnLink>
-//         </Container>
-//     </HomeBg>
-// )
 
 class Home extends React.Component {
     render(){
@@ -63,5 +50,19 @@ class Home extends React.Component {
         );
     }
 }
+//
+// const Home = () => (
+//     <HomeBg className="home-background">
+//         <Container>
+//             <h1>${this.props.location.pathname}</h1>
+//             <IntroText className="intro-text">
+//                 <IntroLeadIn className="intro-lead-in">Welcome To Kodes Necklace Generator!</IntroLeadIn>
+//             </IntroText>
+//             <IntroHeading className="intro-heading">Order a custom necklace here</IntroHeading>
+//             <BtnLink href="/design">Order</BtnLink>
+//         </Container>
+//     </HomeBg>
+// )
+
 
 export default Home
