@@ -7,6 +7,8 @@ import Grid from 'styled-grid'
 import styled from 'styled-components'
 import Btn from './styled-components/Btn'
 
+import DesignModal from './DesignModal'
+
 const SectionHeading = styled.h1`
     font-family: ${fonts.Montserrat};
     text-transform: uppercase;
@@ -35,10 +37,7 @@ const TextMuted = styled.p`
 `;
 
 const Section = styled.section`
-    padding: 100px 0;
-    @media (min-width: 768px){
-        padding: 150px 0;
-    }
+    
 `;
 
 const Design = () => (
@@ -66,8 +65,9 @@ const Design = () => (
                     <div className="row">
                       <Grid lg={12/12} className="col12 text-center buttons">
                         <Btn id="downloadThisNecklace" className="btn-lg">Download necklace as image</Btn>
-                        <Btn id="orderThisNecklace" className="btn btn-lg">Order this necklace</Btn>
-                        <Btn id="confirmOrder" className="btn btn-lg">Order custom necklace</Btn>
+                        <Btn id="orderThisNecklace" className="btn-lg">Order this necklace</Btn>
+                        <Btn id="confirmOrder" className="btn-lg">Order custom necklace</Btn>
+                        <DesignModal />
                       </Grid>
                     </div>
                 </Grid>

@@ -5,13 +5,13 @@ import styled from 'styled-components'
 import Container from './styled-components/Container'
 
 const Nav = styled.nav`
-    min-height: 50px;
+    min-height: 67px;
     margin-bottom: 20px;
-    position: fixed;
-    right: 0;
-    left: 0;
-    top:0;
-    z-index: 1030;
+    // position: fixed;
+    // right: 0;
+    // left: 0;
+    // top:0;
+    // z-index: 1030;
     background-color: #222;
     padding: 10px 0;
 `;

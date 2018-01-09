@@ -23,7 +23,7 @@ const ColoursList = () => {
     function ColourListMaker(){
         const colourList = coloursArray.map((colour) =>
            <li key={colour.name}>
-               <Btn className="btn btn-default btn-lg" type="button" style={{ background: colour.value }} id="0" data-colour={ colour.name } data-hex={ colour.value }>
+               <Btn className="btn-lg" type="button" style={{ background: colour.value }} id="0" data-colour={ colour.name } data-hex={ colour.value }>
                </Btn>
            </li>
          );

@@ -43,7 +43,7 @@ class Home extends React.Component {
                         <IntroLeadIn className="intro-lead-in">Welcome To Kodes Necklace Generator!</IntroLeadIn>
                     </IntroText>
                     <IntroHeading className="intro-heading">Order a custom necklace here</IntroHeading>
-                    <BtnLink href="/design">Order</BtnLink>
+                    <BtnLink href="/design" className="btn-lg">Order</BtnLink>
                 </Container>
             </HomeBg>
         );
