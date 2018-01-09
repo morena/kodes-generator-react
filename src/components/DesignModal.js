@@ -49,6 +49,7 @@ class DesignModal extends React.Component{
                 onRequestClose={this.closeModal}
                 contentLabel="Example Modal"
                 style={customStyles}
+                ariaHideApp={false} //workaround as I couldn't set the element to be hidden
             >
                 <ModalHeader>
                     <Btn data-dismiss="modal" aria-label="Close" className="close" onClick={this.closeModal}><span aria-hidden="true">×</span></Btn>
@@ -58,7 +59,7 @@ class DesignModal extends React.Component{
                     <div className="row">
                         <div className="form-group">
                             <Grid sm={4/12} className="col-sm-4">
-                                <label for="half" className="col-sm-4 control-label">Half</label>
+                                <label htmlFor="half" className="col-sm-4 control-label">Half</label>
                             </Grid>
                             <Grid sm={2/12} className="col-sm-2">
                                 <input type="radio" id="half" name="beadPart" value="half" className="form-control beadPartInput"/>
@@ -68,7 +69,7 @@ class DesignModal extends React.Component{
                     <div className="row">
                         <div className="form-group">
                             <Grid sm={4/12} className="col-sm-4">
-                                <label for="full" className="col-sm-4 control-label">Full Bead</label>
+                                <label htmlFor="full" className="col-sm-4 control-label">Full Bead</label>
                             </Grid>
                             <Grid sm={2/12} className="col-sm-2">
                                 <input type="radio" id="full" name="beadPart" value="full" className="form-control beadPartInput"/>

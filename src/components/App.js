@@ -8,11 +8,10 @@ const Background = styled.div`
 `;
 
 const App = () => (
-    <Background className="background">
+    <Background className="background" id="hide-from-modal">
         <Header className="header" />
         <Main />
     </Background>
 )
-
 
 export default App
