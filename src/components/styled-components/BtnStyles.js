@@ -36,6 +36,13 @@ const BtnStyles = `
     &:nth-child(even) {
         margin-left:5px;
     }
+    &.disabled, &[disabled], fieldset[disabled] & {
+        cursor: not-allowed;
+        filter: alpha(opacity=65);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        opacity: .65;
+    }
 
     .buttons &{
         margin: 0 5px 10px 0;

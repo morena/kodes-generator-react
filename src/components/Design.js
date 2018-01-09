@@ -9,6 +9,8 @@ import Btn from './styled-components/Btn'
 
 import DesignModal from './DesignModal'
 
+const beadsIds = ['_x35__1_', '_x34__2_', '_x33_', '_x32__1_', '_x31__2_']
+
 const SectionHeading = styled.h1`
     font-family: ${fonts.Montserrat};
     text-transform: uppercase;
@@ -37,45 +39,64 @@ const TextMuted = styled.p`
 `;
 
 const Section = styled.section`
-    
+
 `;
 
-const Design = () => (
-    <div>
-        <Section>
-            <div className="row">
-              <Grid lg={12/12} className="col12 text-center">
-                <SectionHeading>Kodes necklaces generator</SectionHeading>
-                <SectionSubheading>Customise your Kodes necklace</SectionSubheading>
-                <TextMuted>
-                  <strong>Click on one or more beads then click on a colour. Move onto a new bead by clicking on it.</strong>
-                </TextMuted>
-              </Grid>
-            </div>
-            <div id="svgWrapper">
-              <form id="necklaceOrderForm" action="/insert-details" method="post" className="form-horizontal">
+class Design extends React.Component{
+
+    constructor(props) {
+		super(props)
+
+        this.state = {
+            submitIsDisabled    : true
+        }
+
+        // This binding is necessary to make `this` work in the callback
+        this.isSubmitDisabled = this.isSubmitDisabled.bind(this);
+
+    }
+
+    isSubmitDisabled(){
+        return this.state.submitIsDisabled
+    }
+
+    render(){
+        return(
+            <Section>
                 <div className="row">
-                  <Grid sm={6/12} md={6/12} lg={6/12} id="test" className="col6">
-                    <Svg />
+                  <Grid lg={12/12} className="col12 text-center">
+                    <SectionHeading>Kodes necklaces generator</SectionHeading>
+                    <SectionSubheading>Customise your Kodes necklace</SectionSubheading>
+                    <TextMuted>
+                      <strong>Click on one or more beads then click on a colour. Move onto a new bead by clicking on it.</strong>
+                    </TextMuted>
                   </Grid>
-                  <Grid sm={6/12} md={6/12} lg={6/12} className="col6">
-                    <div id="colours">
-                      <ColoursList />
-                    </div>
-                    <div className="row">
-                      <Grid lg={12/12} className="col12 text-center buttons">
-                        <Btn id="downloadThisNecklace" className="btn-lg">Download necklace as image</Btn>
-                        <Btn id="orderThisNecklace" className="btn-lg">Order this necklace</Btn>
-                        <Btn id="confirmOrder" className="btn-lg">Order custom necklace</Btn>
-                        <DesignModal />
-                      </Grid>
-                    </div>
-                </Grid>
                 </div>
-              </form>
-            </div>
-        </Section>
-    </div>
-)
+                <div id="svgWrapper">
+                  <form id="necklaceOrderForm" action="/insert-details" method="post" className="form-horizontal">
+                    <div className="row">
+                      <Grid sm={6/12} md={6/12} lg={6/12} id="test" className="col6">
+                        <Svg />
+                      </Grid>
+                      <Grid sm={6/12} md={6/12} lg={6/12} className="col6">
+                        <div id="colours">
+                          <ColoursList />
+                        </div>
+                        <div className="row">
+                          <Grid lg={12/12} className="col12 text-center buttons">
+                            <Btn id="downloadThisNecklace" className="btn-lg">Download necklace as image</Btn>
+                            <Btn id="orderThisNecklace" className="btn-lg">Order this necklace</Btn>
+                            <Btn id="confirmOrder" className="btn-lg" disabled={this.isSubmitDisabled()}>Order custom necklace</Btn>
+                            <DesignModal />
+                          </Grid>
+                        </div>
+                    </Grid>
+                    </div>
+                  </form>
+                </div>
+            </Section>
+        )
+    }
+}
 
 export default Design
