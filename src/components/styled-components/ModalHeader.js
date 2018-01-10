@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const ModalHeader = styled.div`
     padding: 15px;
@@ -10,4 +10,4 @@ const ModalHeader = styled.div`
     }
 `;
 
-export default ( { className, ...props } ) => <ModalHeader className={ `modal-header ${className? className:''}` } {...props}  />
+export default ( { className, ...props } ) => <ModalHeader className={ `modal-header ${className? className:''}` } {...props}  />;

@@ -1,18 +1,18 @@
-import React from 'react'
-import {Switch, Route} from 'react-router-dom'
-import Home from './Home'
-import Design from './Design'
+import React from 'react';
+import {Switch, Route} from 'react-router-dom';
+import Home from './Home';
+import Design from './Design';
 
 const Main = () => (
-  <main>
-    <Switch>
-      <Route exact path='/' component={Home} />
-      <Route path='/design' component={Design}/>
-    </Switch>
-  </main>
-)
+	<main>
+		<Switch>
+			<Route exact path='/' component={Home} />
+			<Route path='/design' component={Design}/>
+		</Switch>
+	</main>
+);
 
-export default Main
+export default Main;
 
 // For browser based projects, there are <BrowserRouter> and <HashRouter> components.
 // The <BrowserRouter> should be used when you have a server that will handle dynamic requests (knows how to respond to any possible URI), while the <HashRouter> should be used for static websites (can only respond to requests for files that it knows about).

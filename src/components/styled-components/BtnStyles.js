@@ -1,4 +1,4 @@
-import fonts from '../../fonts'
+import fonts from '../../fonts';
 
 const BtnStyles = `
     display: inline-block;
@@ -67,4 +67,4 @@ const BtnStyles = `
 `;
 
 
-export default BtnStyles
+export default BtnStyles;

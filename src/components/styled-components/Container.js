@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
     padding-right: 15px;
@@ -9,4 +9,4 @@ const Container = styled.div`
     width: 1170px;
 `;
 
-export default ({ className, ...props }) => <Container className={`col ${className? className:''}`} {...props}/>
+export default ({ className, ...props }) => <Container className={`col ${className? className:''}`} {...props}/>;

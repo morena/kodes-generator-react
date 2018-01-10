@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import BtnLink from './styled-components/BtnLink'
-import Container from './styled-components/Container'
-import fonts from '../fonts'
+import React from 'react';
+import styled from 'styled-components';
+import BtnLink from './styled-components/BtnLink';
+import Container from './styled-components/Container';
+import fonts from '../fonts';
 
 const HomeBg = styled.div`
     background: url(../../assets/images/background.jpg) center center no-repeat;
@@ -35,19 +35,19 @@ const IntroHeading = styled.div`
 `;
 
 class Home extends React.Component {
-    render(){
-        return(
-            <HomeBg className="home-background">
-                <Container>
-                    <IntroText className="intro-text">
-                        <IntroLeadIn className="intro-lead-in">Welcome To Kodes Necklace Generator!</IntroLeadIn>
-                    </IntroText>
-                    <IntroHeading className="intro-heading">Order a custom necklace here</IntroHeading>
-                    <BtnLink href="/design" className="btn-lg">Order</BtnLink>
-                </Container>
-            </HomeBg>
-        );
-    }
+	render(){
+		return(
+			<HomeBg className="home-background">
+				<Container>
+					<IntroText className="intro-text">
+						<IntroLeadIn className="intro-lead-in">Welcome To Kodes Necklace Generator!</IntroLeadIn>
+					</IntroText>
+					<IntroHeading className="intro-heading">Order a custom necklace here</IntroHeading>
+					<BtnLink href="/design" className="btn-lg">Order</BtnLink>
+				</Container>
+			</HomeBg>
+		);
+	}
 }
 //
 // const Home = () => (
@@ -64,4 +64,4 @@ class Home extends React.Component {
 // )
 
 
-export default Home
+export default Home;
