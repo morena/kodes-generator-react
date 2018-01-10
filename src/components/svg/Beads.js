@@ -16,7 +16,7 @@ class Beads extends React.Component{
 
         // This binding is necessary to make `this` work in the callback
         this.checkRandomColoursAreNotSame = this.checkRandomColoursAreNotSame.bind(this)
-        this.addToBeads = this.addToBeads(this)
+        this.addToBeads = this.addToBeads.bind(this)
         this.handleClickOnBeadMain = this.handleClickOnBeadMain.bind(this)
 
         this.checkRandomColoursAreNotSame()
