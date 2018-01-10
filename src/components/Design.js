@@ -9,8 +9,6 @@ import Btn from './styled-components/Btn'
 
 import DesignModal from './DesignModal'
 
-const beadsIds = ['_x35__1_', '_x34__2_', '_x33_', '_x32__1_', '_x31__2_']
-
 const SectionHeading = styled.h1`
     font-family: ${fonts.Montserrat};
     text-transform: uppercase;
