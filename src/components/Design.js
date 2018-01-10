@@ -47,8 +47,7 @@ class Design extends React.Component{
 
         this.state = {
             submitIsDisabled    : true,
-            colourPicked        : null,
-            listDataFromChild   : null
+            colourPicked        : null
         }
 
         // This binding is necessary to make `this` work in the callback
@@ -62,7 +61,7 @@ class Design extends React.Component{
     }
 
     myCallback = (dataFromChild) => {
-       this.setState({ listDataFromChild: dataFromChild })
+       this.setState({ colourPicked: dataFromChild })
    }
 
     render(){
@@ -81,7 +80,7 @@ class Design extends React.Component{
                   <form id="necklaceOrderForm" action="/insert-details" method="post" className="form-horizontal">
                     <div className="row">
                       <Grid sm={6/12} md={6/12} lg={6/12} id="test" className="col6">
-                        <Svg />
+                        <Svg coloursPicked={this.state.colourPicked} />
                       </Grid>
                       <Grid sm={6/12} md={6/12} lg={6/12} className="col6">
                         <div id="colours">

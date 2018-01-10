@@ -11,13 +11,15 @@ import Beads from './svg/Beads'
 
 class Svg extends React.Component{
 
-    // constructor(props) {
-	// 	super(props)
-    //
-    //     // This binding is necessary to make `this` work in the callback
-    //     //this.isSubmitDisabled = this.isSubmitDisabled.bind(this);
-    //
-    // }
+    constructor(props) {
+    	super(props)
+
+        //console.log(this.props.coloursPicked);
+
+        // This binding is necessary to make `this` work in the callback
+        //this.isSubmitDisabled = this.isSubmitDisabled.bind(this);
+
+    }
 
     render(){
         return(
@@ -32,7 +34,7 @@ class Svg extends React.Component{
 
             </g>
 
-            <Beads />
+            <Beads colourPicked={this.props.colourPicked} />
 
             <g id="bead-shading">
                 <path opacity="0.5" fill="#FFFFFF" d="M228.312,253.865c0.078-0.289,0.216-0.545,0.391-0.763l-21.445,12.382    c-1.356,0.783-1.822,2.517-1.039,3.873l12.384,21.451c-0.045-0.279-0.035-0.57,0.042-0.862L228.312,253.865z"></path>

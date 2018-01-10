@@ -11,7 +11,8 @@ class Beads extends React.Component{
         this.state = {
             beadsArray          : [],
             randomColour1       : this.getRandomColour(),
-			randomColour2       : this.getRandomColour()
+			randomColour2       : this.getRandomColour(),
+            colourPicked        : this.props.colourPicked
         }
 
         // This binding is necessary to make `this` work in the callback
