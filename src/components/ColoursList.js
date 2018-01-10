@@ -10,20 +10,35 @@ import BtnStyles from './styled-components/BtnStyles'
 //     background: '#ffec91'
 // }
 
-const ColoursList = () => {
+let coloursArray = Colours.colours
 
-    let coloursArray = Colours.colours
+const Btn = styled.button`
+    ${ BtnStyles }
+    margin-bottom: 5px;
+    padding: 23px 27px;
+`;
 
-    const Btn = styled.button`
-        ${ BtnStyles }
-        margin-bottom: 5px;
-        padding: 23px 27px;
-    `;
+class ColoursList extends React.Component{
 
-    function ColourListMaker(){
+    constructor(props) {
+		super(props)
+
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick = (colourHexValue) => {
+        this.props.callbackFromParent(colourHexValue)
+    }
+
+    render(){
         const colourList = coloursArray.map((colour) =>
            <li key={colour.name}>
-               <Btn className="btn-lg" type="button" style={{ background: colour.value }} id="0" data-colour={ colour.name } data-hex={ colour.value }>
+               <Btn className="btn-lg" type="button"
+                    style={{ background: colour.value }} id="0"
+                    data-colour={ colour.name }
+                    data-hex={ colour.value }
+                    onClick={(e) => this.handleClick(colour.value, e)}
+                >
                </Btn>
            </li>
          );
@@ -34,10 +49,6 @@ const ColoursList = () => {
          )
     }
 
-
-    return(
-        <ColourListMaker />
-    )
 
 }
 
