@@ -14,4 +14,4 @@ const App = () => (
 	</Background>
 );
 
-export default App
+export default App;

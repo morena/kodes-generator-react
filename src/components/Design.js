@@ -1,13 +1,13 @@
-import React from 'react'
-import Svg from './Svg'
-import ColoursList from './ColoursList'
-import fonts from '../fonts'
-import Grid from 'styled-grid'
+import React from 'react';
+import Svg from './Svg';
+import ColoursList from './ColoursList';
+import fonts from '../fonts';
+import Grid from 'styled-grid';
 
-import styled from 'styled-components'
-import Btn from './styled-components/Btn'
+import styled from 'styled-components';
+import Btn from './styled-components/Btn';
 
-import DesignModal from './DesignModal'
+import DesignModal from './DesignModal';
 
 const SectionHeading = styled.h1`
     font-family: ${fonts.Montserrat};
@@ -42,65 +42,65 @@ const Section = styled.section`
 
 class Design extends React.Component{
 
-    constructor(props) {
-		super(props)
+	constructor(props) {
+		super(props);
 
-        this.state = {
-            submitIsDisabled    : true,
-            colourPicked        : null
-        }
+		this.state = {
+			submitIsDisabled    : true,
+			colourPicked        : null,
+		};
 
-        // This binding is necessary to make `this` work in the callback
-        this.isSubmitDisabled = this.isSubmitDisabled.bind(this)
-        this.myCallback = this.myCallback.bind(this)
+		// This binding is necessary to make `this` work in the callback
+		this.isSubmitDisabled = this.isSubmitDisabled.bind(this);
+		this.myCallback = this.myCallback.bind(this);
 
-    }
+	}
 
-    isSubmitDisabled(){
-        return this.state.submitIsDisabled
-    }
+	isSubmitDisabled(){
+		return this.state.submitIsDisabled;
+	}
 
-    myCallback = (dataFromChild) => {
-       this.setState({ colourPicked: dataFromChild })
-   }
+	myCallback(dataFromChild){
+		this.setState({ colourPicked: dataFromChild });
+	}
 
-    render(){
-        return(
-            <Section>
-                <div className="row">
-                  <Grid lg={12/12} className="col12 text-center">
-                    <SectionHeading>Kodes necklaces generator</SectionHeading>
-                    <SectionSubheading>Customise your Kodes necklace</SectionSubheading>
-                    <TextMuted>
-                      <strong>Click on one or more beads then click on a colour. Move onto a new bead by clicking on it.</strong>
-                    </TextMuted>
-                  </Grid>
-                </div>
-                <div id="svgWrapper">
-                  <form id="necklaceOrderForm" action="/insert-details" method="post" className="form-horizontal">
-                    <div className="row">
-                      <Grid sm={6/12} md={6/12} lg={6/12} id="test" className="col6">
-                        <Svg coloursPicked={this.state.colourPicked} />
-                      </Grid>
-                      <Grid sm={6/12} md={6/12} lg={6/12} className="col6">
-                        <div id="colours">
-                          <ColoursList callbackFromParent={this.myCallback} />
-                        </div>
-                        <div className="row">
-                          <Grid lg={12/12} className="col12 text-center buttons">
-                            <Btn id="downloadThisNecklace" className="btn-lg">Download necklace as image</Btn>
-                            <Btn id="orderThisNecklace" className="btn-lg">Order this necklace</Btn>
-                            <Btn id="confirmOrder" className="btn-lg" disabled={this.isSubmitDisabled()}>Order custom necklace</Btn>
-                            <DesignModal />
-                          </Grid>
-                        </div>
-                    </Grid>
-                    </div>
-                  </form>
-                </div>
-            </Section>
-        )
-    }
+	render(){
+		return(
+			<Section>
+				<div className="row">
+					<Grid lg={12/12} className="col12 text-center">
+						<SectionHeading>Kodes necklaces generator</SectionHeading>
+						<SectionSubheading>Customise your Kodes necklace</SectionSubheading>
+						<TextMuted>
+							<strong>Click on one or more beads then click on a colour. Move onto a new bead by clicking on it.</strong>
+						</TextMuted>
+					</Grid>
+				</div>
+				<div id="svgWrapper">
+					<form id="necklaceOrderForm" action="/insert-details" method="post" className="form-horizontal">
+						<div className="row">
+							<Grid sm={6/12} md={6/12} lg={6/12} id="test" className="col6">
+								<Svg coloursPicked={this.state.colourPicked} />
+							</Grid>
+							<Grid sm={6/12} md={6/12} lg={6/12} className="col6">
+								<div id="colours">
+									<ColoursList callbackFromParent={this.myCallback} />
+								</div>
+								<div className="row">
+									<Grid lg={12/12} className="col12 text-center buttons">
+										<Btn id="downloadThisNecklace" className="btn-lg">Download necklace as image</Btn>
+										<Btn id="orderThisNecklace" className="btn-lg">Order this necklace</Btn>
+										<Btn id="confirmOrder" className="btn-lg" disabled={this.isSubmitDisabled()}>Order custom necklace</Btn>
+										<DesignModal />
+									</Grid>
+								</div>
+							</Grid>
+						</div>
+					</form>
+				</div>
+			</Section>
+		);
+	}
 }
 
-export default Design
+export default Design;

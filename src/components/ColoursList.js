@@ -1,7 +1,8 @@
-import React from 'react'
-import Colours from '../data/colours.json'
-import styled from 'styled-components'
-import BtnStyles from './styled-components/BtnStyles'
+import React from 'react';
+import PropTypes from 'react/prop-types';
+import Colours from '../data/colours.json';
+import styled from 'styled-components';
+import BtnStyles from './styled-components/BtnStyles';
 //
 // var style1 = {
 //     background: '#ffffff'
@@ -10,7 +11,7 @@ import BtnStyles from './styled-components/BtnStyles'
 //     background: '#ffec91'
 // }
 
-let coloursArray = Colours.colours
+let coloursArray = Colours.colours;
 
 const Btn = styled.button`
     ${ BtnStyles }
@@ -20,50 +21,53 @@ const Btn = styled.button`
 
 class ColoursList extends React.Component{
 
-    constructor(props) {
-		super(props)
+	constructor(props) {
+		super(props);
 
-        this.handleClick = this.handleClick.bind(this)
-    }
+		this.handleClick = this.handleClick.bind(this);
+	}
 
-    handleClick = (colourHexValue) => {
-        this.props.callbackFromParent(colourHexValue)
-    }
+	handleClick(colourHexValue){
+		this.props.callbackFromParent(colourHexValue);
+	}
 
-    render(){
-        const colourList = coloursArray.map((colour) =>
-           <li key={colour.name}>
-               <Btn className="btn-lg" type="button"
-                    style={{ background: colour.value }} id="0"
-                    data-colour={ colour.name }
-                    data-hex={ colour.value }
-                    onClick={(e) => this.handleClick(colour.value, e)}
-                >
-               </Btn>
-           </li>
-         );
-         return (
-            <ul className="list-unstyled list-inline">
-                {colourList}
-            </ul>
-         )
-    }
+	render(){
+		const colourList = coloursArray.map((colour) =>
+			<li key={colour.name}>
+				<Btn className="btn-lg" type="button"
+					style={{ background: colour.value }} id="0"
+					data-colour={ colour.name }
+					data-hex={ colour.value }
+					onClick={(e) => this.handleClick(colour.value, e)}
+				>
+				</Btn>
+			</li>
+		);
+		return (
+			<ul className="list-unstyled list-inline">
+				{colourList}
+			</ul>
+		);
+	}
 
 
 }
 
 
-    // - var n = 0
-    // for item in colours
-    //   li
-    //     button(type='button', class='btn btn-default btn-lg', style={background: item.value}, id=n, data-colour=item.name, data-hex=item.value)
-    //   - n++
-    // for( let i = 0; i < colours.length; i++ ){
-    //     <li>
-    //         <button className="btn btn-default btn-lg" type="button" style={ style1 } id="0" data-colour="white" data-hex="#ffffff">
-    //         </button>
-    //     </li>
-    // }
+// - var n = 0
+// for item in colours
+//   li
+//     button(type='button', class='btn btn-default btn-lg', style={background: item.value}, id=n, data-colour=item.name, data-hex=item.value)
+//   - n++
+// for( let i = 0; i < colours.length; i++ ){
+//     <li>
+//         <button className="btn btn-default btn-lg" type="button" style={ style1 } id="0" data-colour="white" data-hex="#ffffff">
+//         </button>
+//     </li>
+// }
 
+ColoursList.propTypes = {
+	callbackFromParent: PropTypes.function.required,
+};
 
-export default ColoursList
+export default ColoursList;
