@@ -61,7 +61,7 @@ class Design extends React.Component{
 	}
 
 	myCallback(dataFromChild){
-		console.log(dataFromChild);
+		//console.log("Design: "+dataFromChild);
 		this.setState({ colourPicked: dataFromChild });
 	}
 
@@ -81,7 +81,7 @@ class Design extends React.Component{
 					<form id="necklaceOrderForm" action="/insert-details" method="post" className="form-horizontal">
 						<div className="row">
 							<Grid sm={6/12} md={6/12} lg={6/12} id="test" className="col6">
-								<Svg coloursPicked={this.state.colourPicked} />
+								<Svg colourPicked={this.state.colourPicked} />
 							</Grid>
 							<Grid sm={6/12} md={6/12} lg={6/12} className="col6">
 								<div id="colours">

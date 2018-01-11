@@ -42,14 +42,14 @@ class Beads extends React.Component{
 	}
 
 	checkRandomColoursAreNotSame(){
-		let randColourObj = this.state.randomColours
+		let randColourObj = this.state.randomColours;
 		const rand1 = randColourObj.a;
 		const rand2 = randColourObj.b;
 		let newRandomColour = null;
 
 		if(rand1 === rand2){
 			newRandomColour = this.getRandomColour();
-			randColourObj.b = newRandomColour
+			randColourObj.b = newRandomColour;
 			this.setState({
 				randomColours: randColourObj,
 			});
@@ -105,11 +105,8 @@ class Beads extends React.Component{
 	}
 
 	handleBeadColourChange(id){
-		if(this.state.colourPicked !== undefined){
-			return 'yellow';
-		}else{
-			return this.state.randomColours[id];
-		}
+		
+		return this.props.colourPicked || this.state.randomColours[id];
 	}
 
 	render(){
