@@ -12,15 +12,15 @@ import Beads from './svg/Beads';
 
 class Svg extends React.Component{
 
-	constructor(props) {
-		super(props);
-
-		//console.log(this.props.coloursPicked);
-
-		// This binding is necessary to make `this` work in the callback
-		//this.isSubmitDisabled = this.isSubmitDisabled.bind(this);
-
-	}
+	// constructor(props) {
+	// 	super(props);
+  //
+	// 	//console.log(this.props.coloursPicked);
+  //
+	// 	// This binding is necessary to make `this` work in the callback
+	// 	//this.isSubmitDisabled = this.isSubmitDisabled.bind(this);
+  //
+	// }
 
 	render(){
 		return(

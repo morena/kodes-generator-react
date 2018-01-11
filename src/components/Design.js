@@ -61,6 +61,7 @@ class Design extends React.Component{
 	}
 
 	myCallback(dataFromChild){
+		console.log(dataFromChild);
 		this.setState({ colourPicked: dataFromChild });
 	}
 

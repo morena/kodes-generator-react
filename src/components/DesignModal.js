@@ -29,7 +29,7 @@ class DesignModal extends React.Component{
 		this.state = {
 			//modalIsOpen: true
 			modalIsOpen: false,
-		},
+		};
 
 		this.openModal = this.openModal.bind(this);
 		this.closeModal = this.closeModal.bind(this);
