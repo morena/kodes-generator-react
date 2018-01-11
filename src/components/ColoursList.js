@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'react/prop-types';
+import PropTypes from 'prop-types';
 import Colours from '../data/colours.json';
 import styled from 'styled-components';
 import BtnStyles from './styled-components/BtnStyles';
@@ -67,7 +67,7 @@ class ColoursList extends React.Component{
 // }
 
 ColoursList.propTypes = {
-	callbackFromParent: PropTypes.function.required,
+	callbackFromParent: PropTypes.func,
 };
 
 export default ColoursList;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Colours from '../../data/colours.json';
 
 const beadsIds = ['_x35__1_', '_x34__2_', '_x33_', '_x32__1_', '_x31__2_'];
@@ -18,7 +19,9 @@ class Beads extends React.Component{
 		// This binding is necessary to make `this` work in the callback
 		this.checkRandomColoursAreNotSame = this.checkRandomColoursAreNotSame.bind(this);
 		this.addToBeads = this.addToBeads.bind(this);
+		this.removeFromBeads = this.removeFromBeads.bind(this);
 		this.handleClickOnBeadMain = this.handleClickOnBeadMain.bind(this);
+		this.handleStyleChange = this.handleStyleChange.bind(this);
 
 		this.checkRandomColoursAreNotSame();
 	}
@@ -58,9 +61,40 @@ class Beads extends React.Component{
 		});
 	}
 
+	removeFromBeads(beadId){
+		let beadsArray = this.state.beadsArray;
+
+		beadsArray = this.remove(beadsArray, beadId);
+
+		this.setState({
+			beadsArray : beadsArray,
+		});
+	}
+
+	remove(array, element) {
+		return array.filter(e => e !== element);
+	}
+
 	handleClickOnBeadMain(beadId){
-		this.addToBeads(beadId);
+		if( !this.state.beadsArray.includes(beadId) ){
+			this.addToBeads(beadId);
+		}else{
+			this.removeFromBeads(beadId);
+		}
 		console.log(this.state.beadsArray);
+	}
+
+	handleStyleChange(beadId){
+		if( (this.state.beadsArray.length > 0)
+			&& (this.state.beadsArray.includes(beadId))
+		) {
+			return({
+				stroke: '#945595',
+				strokeWidth: '4px',
+			});
+		}else{
+			return({});
+		}
 	}
 
 	render(){
@@ -70,7 +104,10 @@ class Beads extends React.Component{
 					<path d="M177.325,299.411c-30.891,0-62.776-4.156-112.969-54.35C35.179,215.884,17.29,143.623,11.187,30.285      C10.635,20.038,10.209,9.902,9.888,0l5.286,0c0.32,9.824,0.743,19.88,1.291,30.045c5.949,110.395,23.801,183.454,51.627,211.28      c48.764,48.764,79.495,52.803,109.232,52.803s60.469-4.039,109.234-52.803c27.826-27.826,45.679-100.886,51.627-211.28      C338.733,19.88,339.156,9.824,339.477,0L344.762,0c-0.321,9.901-0.746,20.038-1.298,30.285      c-6.104,113.338-23.992,185.599-53.169,214.776C240.101,295.255,208.216,299.411,177.325,299.411z"></path>
 				</g>
 
-				<g id="_x35__1_" onClick={(e) => this.handleClickOnBeadMain('_x35__1_', e)}>
+				<g id="_x35__1_"
+					onClick={(e) => this.handleClickOnBeadMain('_x35__1_', e)}
+					style={this.handleStyleChange('_x35__1_')}
+				>
 					<g id="b_1_">
 						<path fill="#00AAB5" style={ { fill: '#FFECB8' } } d="M329.916,223.551l-20.898-14.633L276.5,255.357l20.898,14.634c1.281,0.896,3.05,0.585,3.947-0.696        l29.266-41.797C331.509,226.216,331.197,224.447,329.916,223.551z"></path>
 					</g>
@@ -79,7 +116,10 @@ class Beads extends React.Component{
 					</g>
 				</g>
 
-				<g id="_x34__2_" onClick={(e) => this.handleClickOnBeadMain('_x34__2_', e)}>
+				<g id="_x34__2_"
+					onClick={(e) => this.handleClickOnBeadMain('_x34__2_', e)}
+					style={this.handleStyleChange('_x34__2_')}
+				>
 					<g id="b_2_">
 						<path fill="#00AAB5" style={ { fill: this.state.randomColour2 } } d="M280.828,285.198l-12.756-22.093l-49.097,28.344l12.755,22.096c0.782,1.354,2.517,1.819,3.872,1.036        l44.188-25.511C281.146,288.286,281.609,286.552,280.828,285.198z"></path>
 					</g>
@@ -88,7 +128,10 @@ class Beads extends React.Component{
 					</g>
 				</g>
 
-				<g id="_x33_" onClick={(e) => this.handleClickOnBeadMain('_x33_', e)}>
+				<g id="_x33_"
+					onClick={(e) => this.handleClickOnBeadMain('_x33_', e)}
+					style={this.handleStyleChange('_x33_')}
+				>
 					<g id="b_3_">
 						<path fill="#00AAB5" style={ { fill: this.state.randomColour1 } } d="M205.651,320.381v-25.512h-56.694v25.512c0,1.564,1.27,2.834,2.834,2.834h51.025        C204.382,323.215,205.651,321.945,205.651,320.381z"></path>
 					</g>
@@ -97,7 +140,10 @@ class Beads extends React.Component{
 					</g>
 				</g>
 
-				<g id="_x32__1_" onClick={(e) => this.handleClickOnBeadMain('_x32__1_', e)}>
+				<g id="_x32__1_"
+					onClick={(e) => this.handleClickOnBeadMain('_x32__1_', e)}
+					style={this.handleStyleChange('_x32__1_')}
+				>
 					<g id="b_4_">
 						<path fill="#00AAB5" style={ { fill: this.state.randomColour2 } } d="M122.88,313.545l12.755-22.094L86.54,263.104l-12.758,22.095c-0.781,1.354-0.316,3.089,1.037,3.871        l44.189,25.513C120.364,315.365,122.098,314.899,122.88,313.545z"></path>
 					</g>
@@ -106,7 +152,10 @@ class Beads extends React.Component{
 					</g>
 				</g>
 
-				<g id="_x31__2_" onClick={(e) => this.handleClickOnBeadMain('_x31__2_', e)}>
+				<g id="_x31__2_"
+					onClick={(e) => this.handleClickOnBeadMain('_x31__2_', e)}
+					style={this.handleStyleChange('_x31__2_')}
+				>
 					<g id="b">
 						<path fill="#00AAB5" style={ { fill: '#FFECB8' } } d="M57.218,269.993l20.898-14.633L45.599,208.92l-20.9,14.632c-1.279,0.898-1.592,2.666-0.696,3.947        l29.267,41.797C54.169,270.578,55.937,270.889,57.218,269.993z"></path>
 					</g>
@@ -118,5 +167,9 @@ class Beads extends React.Component{
 		);
 	}
 }
+
+Beads.propTypes = {
+	colourPicked: PropTypes.string,
+};
 
 export default Beads;
