@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Navigation from './Navigation'
-import styled from 'styled-components'
-import Container from './styled-components/Container'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Navigation from './Navigation';
+import styled from 'styled-components';
+import Container from './styled-components/Container';
 
 const Nav = styled.nav`
     min-height: 67px;
@@ -21,14 +21,14 @@ const NavbarBrand = styled(Link)`
 `;
 
 const Header = () => (
-    <Nav className="navbar">
-        <Container>
-            <NavbarBrand to="/" className="navbar-brand page-scroll">
-                <img src="../../assets/images/kodes-logo.png" alt="Kodes Accessories" width="100"/>
-            </NavbarBrand>
-            <Navigation/>
-        </Container>
-    </Nav>
-)
+	<Nav className="navbar">
+		<Container>
+			<NavbarBrand to="/" className="navbar-brand page-scroll">
+				<img src="../../assets/images/kodes-logo.png" alt="Kodes Accessories" width="100"/>
+			</NavbarBrand>
+			<Navigation/>
+		</Container>
+	</Nav>
+);
 
-export default Header
+export default Header;

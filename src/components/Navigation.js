@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import fonts from '../fonts'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import fonts from '../fonts';
 
 const NavBar = styled.div`
     width: auto;
@@ -34,10 +34,11 @@ const NavBarNav = styled.div`
 `;
 
 const Navigation = () => (
-    <NavBar className="navbar">
-        <NavBarNav className="navbar-nav">
-            <li><Link to="/design">Create a Custom Necklace</Link></li>
-        </NavBarNav>
-    </NavBar>
-)
-export default Navigation
+	<NavBar className="navbar">
+		<NavBarNav className="navbar-nav">
+			<li><Link to="/design">Create a Custom Necklace</Link></li>
+		</NavBarNav>
+	</NavBar>
+);
+
+export default Navigation;
