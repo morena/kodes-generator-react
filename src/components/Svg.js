@@ -1,6 +1,6 @@
 // removed viewbox="0 0 354.331 349"  from the SVG tag on line 5
 import React from 'react';
-import PropTypes from 'react/prop-types';
+import PropTypes from 'prop-types';
 
 import LongItem1 from './svg/LongItem1';
 import LongItem2 from './svg/LongItem2';

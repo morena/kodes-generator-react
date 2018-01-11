@@ -40,5 +40,4 @@ const Navigation = () => (
 		</NavBarNav>
 	</NavBar>
 );
-
 export default Navigation;
