@@ -52,7 +52,7 @@ class Design extends React.Component{
 
 		// This binding is necessary to make `this` work in the callback
 		this.isSubmitDisabled = this.isSubmitDisabled.bind(this);
-		this.myCallback = this.myCallback.bind(this);
+		this.callBackFromColourList = this.callBackFromColourList.bind(this);
 
 	}
 
@@ -60,9 +60,9 @@ class Design extends React.Component{
 		return this.state.submitIsDisabled;
 	}
 
-	myCallback(dataFromChild){
-		//console.log("Design: "+dataFromChild);
-		this.setState({ colourPicked: dataFromChild });
+	callBackFromColourList(dataFromColourList){
+		//console.log("Design: "+dataFromColourList);
+		this.setState({ colourPicked: dataFromColourList });
 	}
 
 	render(){
@@ -85,7 +85,7 @@ class Design extends React.Component{
 							</Grid>
 							<Grid sm={6/12} md={6/12} lg={6/12} className="col6">
 								<div id="colours">
-									<ColoursList callbackFromParent={this.myCallback} />
+									<ColoursList callbackFromParent={this.callBackFromColourList} />
 								</div>
 								<div className="row">
 									<Grid lg={12/12} className="col12 text-center buttons">
