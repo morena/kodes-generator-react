@@ -35,7 +35,7 @@ class Svg extends React.Component{
 
 				</g>
 
-				<Beads colourPicked={this.props.colourPicked} />
+				<Beads colourPicked={this.props.colourPicked} callbackFromParent={this.props.callbackFromParent} />
 
 				<g id="bead-shading">
 
@@ -97,6 +97,7 @@ class Svg extends React.Component{
 
 Svg.propTypes = {
 	colourPicked: PropTypes.string,
+	callbackFromParent: PropTypes.func,
 };
 
 export default Svg;

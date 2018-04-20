@@ -48,12 +48,14 @@ class Design extends React.Component{
 		this.state = {
 			submitIsDisabled    : true,
 			colourPicked        : null,
+			modalIsOpen					: undefined,
 		};
 
 		// This binding is necessary to make `this` work in the callback
 		this.isSubmitDisabled = this.isSubmitDisabled.bind(this);
 		this.callBackFromColourList = this.callBackFromColourList.bind(this);
-
+		this.callBackFromSvg = this.callBackFromSvg.bind(this);
+		this.handleModal = this.handleModal.bind(this);
 	}
 
 	isSubmitDisabled(){
@@ -62,7 +64,19 @@ class Design extends React.Component{
 
 	callBackFromColourList(dataFromColourList){
 		//console.log("Design: "+dataFromColourList);
-		this.setState({ colourPicked: dataFromColourList });
+		console.log(dataFromColourList);
+		this.setState({
+			colourPicked: dataFromColourList,
+			modalIsOpen: true,
+		});
+	}
+
+	callBackFromSvg(dataFromSvg){
+
+	}
+
+	handleModal(){
+		return this.state.modalIsOpen;
 	}
 
 	render(){
@@ -92,7 +106,7 @@ class Design extends React.Component{
 										<Btn id="downloadThisNecklace" className="btn-lg">Download necklace as image</Btn>
 										<Btn id="orderThisNecklace" className="btn-lg">Order this necklace</Btn>
 										<Btn id="confirmOrder" className="btn-lg" disabled={this.isSubmitDisabled()}>Order custom necklace</Btn>
-										<DesignModal />
+										<DesignModal modalIsOpen={this.handleModal()}/>
 									</Grid>
 								</div>
 							</Grid>

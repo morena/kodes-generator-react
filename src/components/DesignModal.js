@@ -5,6 +5,7 @@ import ModalHeader from './styled-components/ModalHeader';
 import ModalBody from './styled-components/ModalBody';
 import ModalFooter from './styled-components/ModalFooter';
 import Btn from './styled-components/Btn';
+import PropTypes from 'prop-types';
 
 const customStyles = {
 	overlay: {
@@ -27,8 +28,7 @@ class DesignModal extends React.Component{
 		super();
 
 		this.state = {
-			//modalIsOpen: true
-			modalIsOpen: false,
+			modalIsOpen: undefined,
 		};
 
 		this.openModal = this.openModal.bind(this);
@@ -41,6 +41,13 @@ class DesignModal extends React.Component{
 
 	closeModal() {
 		this.setState({modalIsOpen: false});
+	}
+
+	componentWillReceiveProps(props){
+		console.log(props);
+		this.setState({
+			modalIsOpen: props.modalIsOpen,
+		});
 	}
 
 	render(){
@@ -86,5 +93,9 @@ class DesignModal extends React.Component{
 		);
 	}
 }
+
+DesignModal.propTypes = {
+	modalIsOpen: PropTypes.bool,
+};
 
 export default DesignModal;

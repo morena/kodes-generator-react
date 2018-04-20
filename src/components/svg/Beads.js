@@ -36,6 +36,7 @@ class Beads extends React.Component{
 
 	componentWillReceiveProps(nextProps){
 		if(nextProps.colourPicked != null){
+			console.log(nextProps.colourPicked);
 			this.setState({
 				colourPicked: nextProps.colourPicked,
 			});
