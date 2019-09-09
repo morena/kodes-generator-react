@@ -36,7 +36,7 @@ const NavBarNav = styled.div`
 const Navigation = () => (
 	<NavBar className="navbar">
 		<NavBarNav className="navbar-nav">
-			<li><Link to="/design">Create a Custom Necklace</Link></li>
+			<li><Link to="/">Create a Custom Necklace</Link></li>
 		</NavBarNav>
 	</NavBar>
 );
