@@ -1,44 +1,12 @@
 import React from 'react';
-import Svg from './Svg';
-import ColoursList from './ColoursList';
-import fonts from '../fonts';
+import Svg from '../Svg';
+import ColoursList from '../ColoursList';
+import './design.scss';
 import Grid from 'styled-grid';
 
-import styled from 'styled-components';
-import Btn from './styled-components/Btn';
+import Btn from '../styled-components/Btn';
 
-import DesignModal from './DesignModal';
-
-const SectionHeading = styled.h1`
-    font-family: ${fonts.Montserrat};
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 36px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    line-height: 1.1;
-`;
-
-const SectionSubheading = styled.h2`
-    font-family: ${fonts.Montserrat};
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 30px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    line-height: 1.1;
-    color: inherit;
-`;
-
-const TextMuted = styled.p`
-    margin: 0 0 10px;
-    font-size: 14px;
-    line-height: 1.75;
-`;
-
-const Section = styled.section`
-
-`;
+import DesignModal from '../DesignModal';
 
 class Design extends React.Component{
 
@@ -81,14 +49,14 @@ class Design extends React.Component{
 
 	render(){
 		return(
-			<Section>
+			<section>
 				<div className="row">
 					<Grid lg={12/12} className="col12 text-center">
-						<SectionHeading>Kodes necklaces generator</SectionHeading>
-						<SectionSubheading>Customise your Kodes necklace</SectionSubheading>
-						<TextMuted>
+						<h1>Kodes necklaces generator</h1>
+						<h2>Customise your Kodes necklace</h2>
+						<p>
 							<strong>Click on one or more beads then click on a colour. Move onto a new bead by clicking on it.</strong>
-						</TextMuted>
+						</p>
 					</Grid>
 				</div>
 				<div id="svgWrapper">
@@ -113,7 +81,7 @@ class Design extends React.Component{
 						</div>
 					</form>
 				</div>
-			</Section>
+			</section>
 		);
 	}
 }

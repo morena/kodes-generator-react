@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import Design from './Design';
+import Design from './design/Design';
 
 const Main = () => (
 	<main>
