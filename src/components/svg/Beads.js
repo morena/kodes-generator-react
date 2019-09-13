@@ -29,12 +29,12 @@ class Beads extends React.Component{
 
 		this.checkRandomColoursAreNotSame();
 	}
-	componentWillMount(){
+	UNSAFE_componentWillMount(){
 		this.necklacePattern();
 		this.addRandomColoursToPattern();
 	}
 
-	componentWillReceiveProps(nextProps){
+	UNSAFE_componentWillReceiveProps(nextProps){
 		if(nextProps.colourPicked != null){
 			console.log(nextProps.colourPicked);
 			this.setState({

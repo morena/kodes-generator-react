@@ -4,7 +4,7 @@ import Grid from 'styled-grid';
 import ModalHeader from './styled-components/ModalHeader';
 import ModalBody from './styled-components/ModalBody';
 import ModalFooter from './styled-components/ModalFooter';
-import Btn from './styled-components/Btn';
+import Btn from './btn/Btn';
 import PropTypes from 'prop-types';
 
 const customStyles = {
@@ -43,7 +43,7 @@ class DesignModal extends React.Component{
 		this.setState({modalIsOpen: false});
 	}
 
-	componentWillReceiveProps(props){
+	UNSAFE_componentWillReceiveProps(props){
 		console.log(props);
 		this.setState({
 			modalIsOpen: props.modalIsOpen,

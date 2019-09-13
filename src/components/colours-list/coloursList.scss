@@ -1,0 +1,7 @@
+.colours-list {
+  .btn {
+    @extend .btn;
+    margin-bottom: 5px;
+    padding: 23px 27px;
+  }
+}

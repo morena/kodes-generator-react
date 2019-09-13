@@ -1,25 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Colours from '../data/colours.json';
-import styled from 'styled-components';
-import BtnStyles from './styled-components/BtnStyles';
-//
-// var style1 = {
-//     background: '#ffffff'
-// }
-// var style2 = {
-//     background: '#ffec91'
-// }
+import Colours from '../../data/colours.json';
+import Btn from '../btn/Btn';
+import './coloursList.scss';
 
 let coloursArray = Colours.colours;
 
-const Btn = styled.button`
-    ${ BtnStyles }
-    margin-bottom: 5px;
-    padding: 23px 27px;
-`;
-
-class ColoursList extends React.Component{
+class ColoursList extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -34,7 +21,7 @@ class ColoursList extends React.Component{
 	render(){
 		const colourList = coloursArray.map((colour) =>
 			<li key={colour.name}>
-				<Btn className="btn-lg" type="button"
+				<Btn additionalclass="btn-lg"
 					style={{ background: colour.value }} id="0"
 					data-colour={ colour.name }
 					data-hex={ colour.value }
@@ -44,7 +31,7 @@ class ColoursList extends React.Component{
 			</li>
 		);
 		return (
-			<ul className="list-unstyled list-inline">
+			<ul className="list-unstyled list-inline colours-list">
 				{colourList}
 			</ul>
 		);

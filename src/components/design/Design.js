@@ -1,10 +1,9 @@
 import React from 'react';
 import Svg from '../Svg';
-import ColoursList from '../ColoursList';
+import ColoursList from '../colours-list/ColoursList';
 import './design.scss';
 import Grid from 'styled-grid';
-
-import Btn from '../styled-components/Btn';
+import Btn from '../btn/Btn';
 
 import DesignModal from '../DesignModal';
 
@@ -71,9 +70,9 @@ class Design extends React.Component{
 								</div>
 								<div className="row">
 									<Grid lg={12/12} className="col12 text-center buttons">
-										<Btn id="downloadThisNecklace" className="btn-lg">Download necklace as image</Btn>
-										<Btn id="orderThisNecklace" className="btn-lg">Order this necklace</Btn>
-										<Btn id="confirmOrder" className="btn-lg" disabled={this.isSubmitDisabled()}>Order custom necklace</Btn>
+										<Btn id="downloadThisNecklace" additionalclass="btn-lg" btnvalue="Download necklace as image"></Btn>
+										<Btn id="orderThisNecklace" additionalclass="btn-lg" btnvalue="Order this necklace"></Btn>
+										<Btn id="confirmOrder" additionalclass="btn-lg" disabled={this.isSubmitDisabled()} btnvalue="Order custom necklace"></Btn>
 										<DesignModal modalIsOpen={this.handleModal()}/>
 									</Grid>
 								</div>

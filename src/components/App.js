@@ -1,17 +1,12 @@
 import React from 'react';
-import Header from './Header';
+// import Header from './header/Header';
 import Main from './Main';
-import styled from 'styled-components';
-
-const Background = styled.div`
-    //background-color: #333;
-`;
 
 const App = () => (
-	<Background className="background" id="hide-from-modal">
-		<Header className="header" />
+	<div className="background" id="hide-from-modal">
+		{/* <Header className="header" /> */}
 		<Main />
-	</Background>
+	</div>
 );
 
 export default App;
