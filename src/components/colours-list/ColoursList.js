@@ -8,34 +8,38 @@ let coloursArray = Colours.colours;
 
 class ColoursList extends React.Component {
 
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.handleClick = this.handleClick.bind(this);
-	}
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-	handleClick(colourHexValue){
-		this.props.callbackFromParent(colourHexValue);
-	}
+  const mapDispatchToProps = dispatch => ({
+    handleClick: colourHexValue => dispatch(ACTIONS.pickBead(colourHexValue))
+  });
 
-	render(){
-		const colourList = coloursArray.map((colour) =>
-			<li key={colour.name}>
-				<Btn additionalclass="btn-lg"
-					style={{ background: colour.value }} id="0"
-					data-colour={ colour.name }
-					data-hex={ colour.value }
-					onClick={(e) => this.handleClick(colour.value, e)}
-				>
-				</Btn>
-			</li>
-		);
-		return (
-			<ul className="list-unstyled list-inline colours-list">
-				{colourList}
-			</ul>
-		);
-	}
+  handleClick(colourHexValue) {
+    this.props.callbackFromParent(colourHexValue);
+  }
+
+  render() {
+    const colourList = coloursArray.map((colour) =>
+      <li key={colour.name}>
+        <Btn additionalclass="btn-lg"
+          style={{ background: colour.value }} id="0"
+          data-colour={colour.name}
+          data-hex={colour.value}
+          onClick={(e) => this.handleClick(colour.value, e)}
+        >
+        </Btn>
+      </li>
+    );
+    return (
+      <ul className="list-unstyled list-inline colours-list">
+        {colourList}
+      </ul>
+    );
+  }
 
 
 }
@@ -54,7 +58,7 @@ class ColoursList extends React.Component {
 // }
 
 ColoursList.propTypes = {
-	callbackFromParent: PropTypes.func,
+  callbackFromParent: PropTypes.func
 };
 
 export default ColoursList;
